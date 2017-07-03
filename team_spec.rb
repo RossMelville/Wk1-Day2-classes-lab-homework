@@ -30,6 +30,32 @@ class TestTeam < MiniTest::Test
     assert_equal("Coach Wiggum", result)
   end
 
+  def test_set_coach_name
+    team1 = Team.new("Devils", ["Pat", "Steve", "Sam"], "Coach Carter")
+    team2 = Team.new("Spankers", ["Ned", "Whacky", "Covert"], "Coach Wiggum")
+
+    result = team1.set_coach_name("Coach Maximal")
+
+    assert_equal("Coach Maximal", team1.get_coach_name)
+  end
+
+  def test_set_coach_name
+    team1 = Team.new("Devils", ["Pat", "Steve", "Sam"], "Coach Carter")
+    team2 = Team.new("Spankers", ["Ned", "Whacky", "Covert"], "Coach Wiggum")
+
+    result = team1.set_coach_name("Coach Maximal")
+
+    assert_equal("Coach Maximal", team1.get_coach_name)
+  end
+
+  def test_add_player
+    team1 = Team.new("Devils", ["Pat", "Steve", "Sam"], "Coach Carter")
+    team2 = Team.new("Spankers", ["Ned", "Whacky", "Covert"], "Coach Wiggum")
+
+    result = team2.add_player("Maximullion")
+
+    assert_equal(["Ned", "Whacky", "Covert", "Maximullion"], team2.get_players_names)
+  end
 
 
 end
