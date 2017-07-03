@@ -39,7 +39,15 @@ class TestLibrary < MiniTest::Test
   end 
 
   def test_list_all_books
-    book1 = Book.new("Trainspotting", "Ross", 01-07-2017)
+    book1 = Book.new(@books[0])
+    book2 = Book.new(@books[1])
+    book3 = Book.new(@books[2])
+    book4 = Book.new(@books[3])
+    book4 = Book.new(@books[3])
+
+    result = @books.list_all_books
+    assert_equal(nil, result)
+    
   end
 
 
