@@ -57,5 +57,23 @@ class TestTeam < MiniTest::Test
     assert_equal(["Ned", "Whacky", "Covert", "Maximullion"], team2.get_players_names)
   end
 
+  def test_check_player__false
+    team1 = Team.new("Devils", ["Pat", "Steve", "Sam"], "Coach Carter")
+    team2 = Team.new("Spankers", ["Ned", "Whacky", "Covert"], "Coach Wiggum")
+
+    result = team1.check_player("Max")
+
+    assert_equal(false, result)
+  end
+
+  def test_check_player__true
+    team1 = Team.new("Devils", ["Pat", "Steve", "Sam"], "Coach Carter")
+    team2 = Team.new("Spankers", ["Ned", "Whacky", "Covert"], "Coach Wiggum")
+
+    result = team1.check_player("Steve")
+
+    assert_equal(true, result)
+  end
+
 
 end

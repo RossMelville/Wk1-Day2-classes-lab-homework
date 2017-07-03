@@ -28,4 +28,14 @@ class Team
   def add_player(new_player)
     @players << new_player
   end
+
+  def check_player(check_player)
+    for player in @players do
+      if player == check_player
+        return true
+      end
+    end
+    return false
+  end
+  
 end
