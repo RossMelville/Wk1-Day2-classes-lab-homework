@@ -24,4 +24,8 @@ class Student
   def student_talk
     return "I am currently talking"
   end
+
+  def favourite_language(language)
+    return "I love #{language}"
+  end
 end
