@@ -8,4 +8,20 @@ class Student
   def get_name
     return @name
   end
+
+  def get_cohort
+    return @cohort
+  end
+
+  def set_name(name)
+    @name = name
+  end
+
+  def set_cohort(cohort)
+    @cohort = cohort
+  end
+
+  def student_talk
+    return "I am currently talking"
+  end
 end
