@@ -1,12 +1,13 @@
 class Team
 
   attr_reader(:name, :players)
-  attr_accessor(:coach)
+  attr_accessor(:coach, :points)
 
-  def initialize(name, players, coach)
+  def initialize(name, players, coach, points)
     @name = name
     @players = players
     @coach = coach
+    @points = points
   end
 
   def get_name
@@ -37,5 +38,17 @@ class Team
     end
     return false
   end
-  
+
+  def points(outcome)
+    if outcome == "win"
+      @points += 3
+    elsif outcome == "loss"
+      @points += 0
+    elsif outcome == "draw"
+      @points += 1
+    else
+      return "not a valid entry"
+    end
+    return @points
+  end
 end
